@@ -1,0 +1,72 @@
+### SHORT ANSWER
+
+>Why do programmers use pseudocode?
+
+Pseudocode is used to walk through the steps of accomplishing a task without having worring about language-specific syntax, the ways to tackle a step, efficiency concerns, etc.
+
+I think of it like a vacation. If I want to go to Disney World, the pseudocode would read something like: 1) go to Orlando, FL. 2) get a hotel, 3) get a Disney World pass. 
+
+The actual implementation - drive or fly to Orlando, where to stay, how many nights, should I buy a pass at the park or do so online, what is the most cost-effecient, etc. is all part of the actual implementation and can be sussed out later.
+
+>If you run pseudocode on your computer what would happen?
+
+I'm not sure how you would even run it. But the computer would not understand it. Computers only understand certain languages to accomplish their tasks and human language is not one of those. Pseudocode is a template for the human to understand what is going on, and then to convey those instructions to the computer via a language the computer understands. 
+
+PROGRAMMING ASSIGNMENT
+
+> Create a function that takes two numbers and prints out the greater number.
+```
+FUNCTION printGreaterNumber
+	INPUT first number
+	INPUT second number
+	IF first number is equal to second number
+		PRINT "It is a tie"
+	ELSE IF first number is greater than the second number
+		PRINT first number
+	ELSE
+		PRINT second number
+	END IF/ELSE IF/ELSE
+END FUNCTION
+```
+
+> Create a function that prints out the numbers from 1 to 100.
+```
+FUNCTION printTo100
+	INIT count to 1
+	PRINT count
+	WHILE count is not 100
+		ADD 1 to count
+		PRINT count
+	END WHILE
+END FUNCTION
+```
+
+> Create a function that searches for a specific entry in a phonebook.
+```
+FUNCTION findEntry(entry)
+	FOR every item in phonebook
+		IF phoneBookItem is equal to entry
+			RETURN entry
+		END IF
+	END FOR
+	RETURN "Could not find Entry"
+END FUNCTION
+```	
+
+> Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice.
+
+```
+let phonebook = ["Anthony", "Amy", "Renee", "Ashley"];
+
+findEntry = entry => {
+  for (let i = 0; i < phonebook.length; i++) {
+
+    if (phonebook[i] === entry) {
+      return "I have found " + entry;
+    }
+  }
+  return "Entry not found";
+}
+
+findEntry('Renee');
+```
