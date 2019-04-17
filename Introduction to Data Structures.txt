@@ -1,0 +1,80 @@
+a) Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+let rideLine = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+console.log(rideLine);
+
+// ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+
+
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+rideLine.push("Mary");
+
+console.log(rideLine);
+
+// [ 'Vivian', 'Ava', 'Josh', 'Patrick', 'Mike', 'Mary' ]
+
+
+
+c. Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+findJosh = () => {
+  return rideLine[2];
+}
+
+findJosh(rideLine);
+
+console.log(findJosh());
+
+// Josh
+
+
+
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+
+let findEmily = rideLine.find(element => element === "Emily");
+
+console.log(findEmily);
+
+// ReferenceError: findEmily is not defined
+
+
+
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+rideLine.splice(1, 0, "Melissa");
+
+console.log(rideLine);
+
+// [ 'Vivian', 'Melissa', 'Ava', 'Josh', 'Patrick', 'Mike' ]
+
+
+
+f) If Patrick wants to leave the line, how would you delete him from the array?
+
+filter() can be used to not mess with the original array, and is therefore preferred. Splice mutates the original array.
+
+// FILTER()
+
+const removePatrick = rideLine.filter(e => e !== "Patrick");
+
+console.log(removePatrick);
+
+// [ 'Vivian', 'Ava', 'Josh', 'Mike' ]
+
+
+// SPLICE()
+
+rideLine.splice(3, 1);
+
+console.log(rideLine);
+
+// [ 'Vivian', 'Ava', 'Josh', 'Mike' ]
+
+2) An array seems great for any retail/restaurant business. Typically, those sort of businesses on a First In, First Out structure.
+
+3) You could use Array.find(), as was done in 1c if you took the customer's name with their order, or if you what they ordered.
+
+You could use Array.findIndex() if you don't know anything about the customer or their order, but you know they are were the third person in line and therefore have the third order.
