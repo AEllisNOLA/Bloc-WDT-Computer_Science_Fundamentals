@@ -1,0 +1,82 @@
+> 1) What is time complexity and what is its relation to algorithms?
+Time complexity is how the time to complete a function increases in relation to more inputs.
+
+> 2) What is runtime?
+Runtime is the amount of time a function takes to complete. It is also sometimes used interchangably with Time Complexity.
+
+> 3) How is the runtime of an algorithm calculated?
+
+Find all the executions going on in the function. Then focus on the the largest time functionality. When figuring out time complexity, you are looking for a ballpark figure and not necessarily precision. You are primarily concerned with the shape of the graph when mapped out at several different instances of increasing input.
+
+So if a function has two executions that run at 2(n) and one execution that is constant time, you could just say it is 0(n) because the constant time is dropped, and doubling the 0(n) does not make too much of a difference. 
+
+If a function had nested loops, that takes a lot of operations because for every execution of the outer loop, the inner loop executes multiple times - known as O(n^2). Even if we have that one O(n^2) with a for loop - 0(n) - elsewhere in the function and a constant - 0(1) - elsewhere, those latter two executions increase the time complexity in a negligiable manner, so they are not too important and can be cut out. 
+
+> 4) Name the six types of algorithm growth rates we saw in this checkpoint and list them in order of most efficient to least efficient. Now Google another algorithmic growth rate not covered and place it in the correct spot in your list.
+
+1. 0(1)
+2. 0(log n)
+3. 0(n)
+4. 0(n log n) 
+5. 0(n^2)
+6. 0(n^3) *found via Google search*
+7. 0(2^n)
+
+5) Choose one of the algorithmic growth rates from the last question and make a comparison to a real-life situation.
+
+If I am at a soda machine with a ton of quarters, that is going to be something resembling 0(n) time. It will take me approximately 10 seconds to insert the quarters, select my soda, have the machine go through its process, and grab the can from the opening. If I am grabbing sodas for myself and 3 friends, it'll be 4 sodas at 10 seconds each for a total of 40 seconds.
+
+Conversely, if I am walking to a cooler filled with sodas at a friend's BBQ get-together, it will take me the same amount of time to walk to the cooler, open it and grab one can vs. walking to the cooler, opening it and grabbing 4 cans at once. There is no excess time inserting quarters or waiting for a machine to go through its process, so that is more like a constant time.
+
+6) Determine the time complexity of the following snippet of code. It is commonly known as a linear search.
+
+```
+FUNCTION linearSearch(array, target)
+ FOR each number in the array
+   IF number = target THEN
+     RETURN true
+   END IF
+ END FOR
+ RETURN false
+END FUNCTION
+```
+0(n) + 0(n) + 0(n) + 0(1). Which is 3 0(n) + 1. The excess n's get discarded, as does the constant.
+Final answer: 0(n)
+
+7) Determine the time complexity of the following snippet of code. If you get stuck, read through the graphical representation section again.
+
+```
+FUNCTION foo(array)
+ FOR each number in the array
+   FOR each number in the array
+     print "Hello"
+   END FOR
+ END FOR
+END FUNCTION
+```
+0(n) * 0(n) + 0(1). Simplified to 0(n^2) with 0(1) being discarded.
+Final answer: 0(n^2)
+
+8) Determine the time complexity of the following snippet of code. It is commonly known as the Fibonacci sequence.
+
+```
+FUNCTION fibonacci(number)
+ IF number < 1 THEN
+   ERROR
+ ELSE IF number = 1 or 2 THEN
+   RETURN 1
+ ELSE
+   CALL fibonacci WITH number - 2 RETURNING twoBack
+   CALL fibonacci WITH number - 1 RETURNING oneBack
+   RETURN twoBack + oneBack
+ END IF
+END FUNCTION
+```
+
+0(1) + 0(1) + 0(2^n) + 0(2^n). Simplified to 0(2^n) with the excess 0(2^n) and the two 0(1)s being discarded.
+Final answer: 0(2^n)
+
+9) Out of the code snippets you just saw, which is the most time efficient?
+
+The Fibonacci sequence starts off equal to 0(1). However, when the worst case scenario is taken into account, 0(1) is the more efficient.
+
