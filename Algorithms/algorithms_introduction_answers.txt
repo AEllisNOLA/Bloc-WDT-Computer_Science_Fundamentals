@@ -1,0 +1,100 @@
+1) Using proper pseudo-code, describe the following primitive algorithms:
+
+a. Making coffee;
+
+    BEGIN FUNCTION makeCoffee
+        IF no filter in basket
+            ADD filter to basket
+        END IF
+        ADD x ounces of water to pot WHERE x IS EQUAL TO amount of coffee you want to make.
+        ADD y tablespoons of coffee to filter WHERE y IS EQUAL TO (x / 5)
+        CLOSE coffee filter housing
+        TURN ON to brew coffee
+        WHILE coffee is still brewing
+            LET coffee finish brewing
+        END WHILE
+    END FUNCTION
+
+
+b. Washing dishes;
+
+    BEGIN FUNCTION washingDishes
+        AIM faucet over dish tub
+        ADD squirt of dish soap
+        TURN ON faucet
+        WHILE tub is not mostly filled with water
+            LET faucet run
+        END WHILE
+        PLACE dirty dishes IN tub
+        AIM faucet on other side of sink
+        WHILE dirty dishes left in tub
+            PULL OUT a single dish
+            RUN water over dishes
+            SCRUB WITH sponge
+            WHILE food is still on plate
+                CONITNUE SCRUBBING
+            END WHILE
+            PLACE dish in dishwasher
+        END WHILE
+        ADD SOAP to dishwasher
+        SHUT dishwasher door
+        START dishwasher
+    END FUNCTION
+
+
+c. Make Frozen Pizza;
+
+    BEGIN FUNCTION cookFrozenPizza
+        PREHEAT OVEN at x degrees Farenheit WHERE x IS EQUAL TO temperature on box
+        WHILE OVEN is preheating
+            WAIT
+        END WHILE
+        REMOVE PIZZA from freezer
+        IF in cardboard sleeve
+            REMOVE from cardboard sleeve
+        END IF
+        IF in plastic sleeve
+            REMOVE from plastic sleeve
+        END IF
+        PLACE PIZZA ON RACK
+        SET TIMER y minutes WHERE y IS EQUAL TO time on box
+        WHILE TIMER has time left
+            WAIT
+        END WHILE
+        GRAB pizza cutter
+        PUSH pizza onto plate USING pizza cutter
+        CUT pizza
+    END FUNCTION
+
+2) As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try 
+to pick the best algorithm for a situation. Name three companies who created an algorithm that made them 
+successful, e.g., Google's search algorithm. It doesn't need to be a tech example (such as a recipe or 
+manufacturing a product). Google's algorithm produces more relevant results than other search engines; what 
+about each of your cases make them stand out?
+
+WAZE (GPS Navigator): 
+    Allows you to drive aroud the city quickly, just like Google Maps. Adds extra functionality, such as: if 
+    there is a better route, report new route; if other users flagged police detected, report police; if there 
+    is a crash, report location of crash; if there is debris on road, report location of debris.
+
+SUBWAY (sub sandwich resturant)
+    Offers sandwiches made right in front of you. Allows patrons to see the product be made and choose only 
+    the ingredients they want. Offers more somewhat-healthy options over other fast food restaurants.
+
+SWEETWATER (musical instrument retailer)
+    Offers a wide variety of musical instruments, like other retailers. Provides specific account representative
+    to answer any questions or concerns, as well as deal with any issues. Provides quality check on most
+    instruments over a certain price.
+
+3) Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+An efficient alogorithm accomplishes the job to a satisfactory level in the quickest time and/or least amount 
+of steps.
+
+For instance, my washing dishes metaphor was fairly long-winded because our dishwasher is fairly old and 
+requires pre-soaking and scrubbing to reach peak performance.
+
+For someone with a newer dishwasher that my be better performing, I could have skipped half the steps. But 
+that algorithm wouldn't work for people like me.
+
+Job #1 is to get the task done right. Then tweak the algorithm too add efficiency, speed, or value-added features.
