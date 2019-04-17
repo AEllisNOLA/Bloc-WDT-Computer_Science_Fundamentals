@@ -1,0 +1,48 @@
+Computer Science quizzes
+
+1) What is a data structure?
+>>> A) An abstract template to organize data
+B) A type of database that stores data used by software
+C) A series of functions used to manipulate data
+D) None of the above
+
+EXPLANATION
+A data structure is an abstract template that organizes data in a way that helps to simplify sorting, searching, computing and other operations.
+
+Covered in: Introduction to Data Structures
+
+
+2) Why do engineers need to use data structures when writing software?
+A) To provide a logical workflow to test and debug code 
+>>> B) To organize data for easier use and manipulation
+C) To improve the performance and efficiency of code
+D) None of the above
+
+EXPLANATION
+Engineers use data structures to define the most appropriate ways to store and manipulate data required in the software.
+
+Covered in: Introduction to Data Structures
+
+3) Which of the following statements is false?
+A) Classes belong to object-oriented languages.
+B) Classes are a type of data structure.
+>>> C) Data structures must be implemented using classes.
+D) All of the above.
+
+EXPLANATION
+Although classes are a type of data structure, they are not necessary. Classes belong to object-oriented languages. Although not all languages are object-oriented, most are still able to support the creation of abstract data structures.
+
+Covered in: Introduction to Data Structures
+
+4) Which of the following is an example of a data structure that can be used to store a collection of names?
+
+>>> A) Array
+B) String
+C) Number
+D) All of the above
+
+EXPLANATION
+Arrays are used to store data in a sequence, one element after another. By combining the location of the data and the ability to recover any element by using an index, the array simplifies access to and manipulation of ordered elements. Arrays are a good choice for collections of simple data types such as strings, numbers, etc.
+
+Covered in: Introduction to Data Structures
+
