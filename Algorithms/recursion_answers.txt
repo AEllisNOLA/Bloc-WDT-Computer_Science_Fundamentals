@@ -1,0 +1,59 @@
+> Define and compare recursion and iteration.
+
+Examples of the iteration are the **for loop** or the **while loop**.
+
+The **for loop** repeats a set of instructions until a condition is reached, then stops once the condition is reached. Similarly, a **while loop** checks if a condition is true terminates once the completion is false.
+
+**Recursion** is another way of repeating instructions. However, rather than looping through, it uses a single method that calls on itself repeatedly but with different input upon each invocation. Recursive functions have a **base case** which can be compared to the conditionals used in iteration and a **recursive case** which invokes itself again.
+
+> Name five algorithms that are commonly implemented by recursion.
+
+Several sorting algorithms use them, including **binary search**, **merge sort** and **quick sort**.
+
+Mathematical applications include finding the **factorial** of a number (that number multiplied by every number beneath it) or the **Fibbonacci** sequence (a series of numbers in which the next number can be found by adding together the two numbers before it).
+
+> When should you use recursion, and when should you avoid recursion? Give examples for each.
+
+A lot of coding is a balancing act. The most efficient solution in terms of computer resources may be unreadable to fellow programmers. The clearest solution may cause so much system drag that it isn't worth implementing in the first place.
+
+Iterative vs. recursive are not immune to the aforementioned concerns.
+
+When a solution is built upon lesser versions of itself (such as factorials or Fibonacci), recursive is a good way to go. It doesn't drag on systems, it has a scant line count, and will make sense to most.
+
+Moving through a collection in which the elements do not have an intuitive relationship may be confusing to fellow programmers and may be a drag on the system. It's being too cute.
+
+> Compare the recursive and iterative solutions to the three algorithms from the checkpoint (factorial, maximum, and Fibonacci). What is similar, and what is different?
+
+They are similar in that they get the correct results. They are different in terms of readability. What's interesting is that there is no obvious winner on which is more readable: it depends on the type of problem.
+
+As mentioned in the previous question, the Fibonacci and factorial algorithms make far more sense using recursion once you wrap your mind around the theory of recursion. But the maximum algorithm doesn't intuitively make sense because there is no obvious order or relationship to the elements you are sifting through. They don't build on their components the way Fibonacci and factorial do.
+
+> Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+
+```
+countItems = (collection) => {
+  if (collection.length) {
+    return 1 + countItems(collection.slice(1));
+  } else {
+    return 0;
+  }
+}
+```
+
+> A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+
+```
+isPalindrome = (str) => {
+  if (str.length === 0 || str.length === 1) return true;
+  if (str[0] === str[str.length - 1]) {
+    return (isPalindrome(str.slice(1, str.length - 1)));
+  }
+  return false;
+}
+```
+
+> Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion. 
+
+You just searched for "recursion". By clicking that "Did you mean: recursion" link, you will be searching for recursion again. Which will deliver the same "Did you mean: recursion" link. And so on, and so on.
+
+It is a real-life instance of recursion.
