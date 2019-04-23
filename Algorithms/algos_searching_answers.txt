@@ -1,0 +1,62 @@
+> What is a real-life scenario that uses linear search?
+
+In a **shuffled deck of cards**, if you need to find the Queen of Hearts, you are going to have to look through somewhere between 1 & 52 cards, because there is no order. It could be the first card, it could be the last card, or anywhere in between.
+
+Binary search cannot be used because it risks skipping over the card due to a lack of order.
+
+> What is a real-life scenario that uses binary search?
+
+The classic example is a **dictionary** or phone book. If you are looking for _kazoo_ in the dictionary, you would flip to the middle of the dictionary and you see _mongoose_. So you adjust and toss a hunk of pages back. You look again and see _jubilee_. Getting closer. Repeat this process a few more times and eventually you will get to the page with _kazoo_ on it.
+
+Rather than searching all 2,000 pages of the dictionary, it took you 5 or 6 times to find what you are looking for.
+
+> Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+
+7
+
+> Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+3
+
+> Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+It is unsorted, so you'd have to use linear. The lack of order in the collection means using binary search risks skipping over the target, which could result in a false "Item not in collection" signal when the item was actually in the collection, just skipped over during one of the chop-offs.
+
+> Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning. 
+
+Binary is the way to go because it is sorted. 
+
+Linear would have a time complexity of O(N) in which the time taken grows proportionately with the number of items in the collection.
+
+Binary is far quicker because it chops off half of the collection every iteration, making it 0(log n) - which is only slightly worse than the best performance you can get as an 0(1) constant.
+
+> You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+Binary search used because there is an inherent order to words in a dictionary.
+
+```
+dictionarySearch = (collection, value) => {
+  let start = 0;
+  let end = collection.length - 1;
+  let mid = Math.floor((start + end) / 2);
+
+  while (start <= end && collection[mid] !== value) {
+    if (value < collection[mid]) end = mid - 1;
+    else start = mid + 1;
+    mid = Math.floor((start + end) / 2);    
+  }
+  return collection[mid] === value ? `${value} is at index ${mid}` : `${value} not found`;
+}
+```
+
+> You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+Linear search used because there is no order to the fish in the tank.
+```
+netFish = (allFish, targetFish) => {
+  for (let i in allFish) {
+    if (allFish[i] === targetFish) return `Here is your ${targetFish}, kiddo.`;
+  }
+  return `We do not have any ${targetFish}, kid. You are seeing things.`;
+}
+```
