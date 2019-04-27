@@ -1,7 +1,61 @@
 > Implement a solution for bubble sort.
 
+```
+bubbleSort = (arr) => {
+  for (let i = 0; i < arr.length - 1; i++) {
+    let swappedFlag = false;
+    for (let j = 0; j < arr.length - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        swappedFlag = true;
+      }
+    }
+  }
+  return arr;
+}
+```
+
 > Write pseudocode for quicksort.
+
+```
+
+START FUNCTION quicksort(arr)
+  // PICK PIVOT
+  SET pivot to equal to last item in arr
+  // COMPARE EACH ELEMENT
+  SET left to empty array
+  SET right to empry array
+  // MOVE ELEMENTS LESS THAN PIVOT TO LEFT SIDE OF PIVOT
+  FOR EACH arr[index] in arr
+    IF arr[index] is less than pivot THEN 
+      PUSH arr[i] to left array
+  // MOVE ELEMENTS GREATER THAN PIVOT TO RIGHT SIDE OF PIVOT
+    ELSE 
+      PUSH arr[i] to right array
+    END IF
+  END FOR
+  // RECURSIVE CALLS ON RESULTING SUBARRAYS
+  CALL quickSort() on left array
+  CALL quickSort() on right array
+  // RETURN SORTED ARR
+  RETURN arr
+END FUNCTION
+```
 
 > We talked about time complexity in a previous checkpoint, and how to get an idea of the efficiency of an algorithm. After looking at the pseudocode for the above sorting methods, identify why merge sort and quick sort are much more efficient than the others. Walking through each algorithm with a few sample collections may help.
 
+Bubble Sort, Insertion Sort and Selection Sort all have a worst case time complexity of O(n^2) due to their nested loops. Not great.
+
+Merge Sort and Quick Sort are both O(n log n) because they do not use nested loops, and instead split the given data into chunks of 0 or 1 element, which are de facto sorted. They then rebuild all of these bite-size chunks into a sorted whole.
+
+This splitting up happens exponentially, which is great. The larger the collection, the more efficiently they split up. The building back up to the whole is an 0(n) relationship where the time taken grows proportionately with the size. So O(n log n) is sort of a mid-point between exponential speed (good!) and proportional growth(not great, but not terrible either.)
+
 > All of the sorts addressed in this checkpoint are known as comparison sorts. Research bucket sort and explain how it works. What is the ideal input for bucket sort?
+
+Bucket Sort is sorting mechanism that creates a "bucket" for each element in an array. Not each bucket is guaranteed an item though. An array element goes into a bucket based on the first number in it (10 and 19 go in a tens bucket; 21, 25 and 28 go in a twenties bucket, etc.). 
+
+For best implementation, each bucket would be populated with its own item. The fewer buckets you have with multiples, the more effecient it will be.
+
+Each bucket is similar to a grocery store checkout line. If there are 10 customers and 10 open lanes, every customer will be out fairly quickly. But if you have 10 customers and 5 open lanes to take them, it'll take twice as long. 2 open lanes for 10 customers is even worse, etc.
