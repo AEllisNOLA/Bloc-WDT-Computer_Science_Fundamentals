@@ -1,4 +1,4 @@
-Computer Science quiz 1
+﻿Computer Science quiz 1
 
 1) What is a data structure?
 >>> A) An abstract template to organize data
@@ -149,3 +149,248 @@ Covered in: Time Complexity Basics
 B) The n log n function is the most efficient and both the n + 1 and 2n functions are equally but less efficient.
 C) The function with n + 1 instructions is the most efficient, followed by 2n, and n log n is last.
 D) The linear function with n + 1 instructions is the most efficient, followed by n log n, and the 2n function is last.
+
+Basic Searching Algorithms and Recursion
+
+1) How does a linear search operate?
+
+A) It searches iteratively only on sorted collections.
+B) It uses recursion to continuously call a search function until it finds the target item.
+>>> C) It iterates over each item in a collection until it finds the target item.
+D) None of the above.
+
+EXPLANATION
+The linear search algorithm uses a loop to iterate over each item in a collection until it finds the target item. The collection may or may not be sorted.
+
+Covered in: Algorithms: Searching
+
+2) How does a binary search operate?
+
+A) It uses a set of keys that are used to find the target item.
+>>> B) It uses a divide and conquer approach to find the item it is searching for in a sorted list.
+C) It iterates through sorted or unsorted list until it finds the target item.
+D) None of the above.
+
+EXPLANATION
+The binary search algorithm uses a divide and conquer methodology to find what it's searching for in a collection. It only functions properly on a pre-sorted collection.
+
+Covered in: Algorithms: Searching
+
+
+3) What best describes recursion?
+
+>>> A) A procedure (i.e., a function) that calls itself.
+B) A piece of code that uses a “for” or “while” loop.
+C) A technique used to search data structures.
+D) None of the above.
+
+EXPLANATION
+Recursion is a technique in which a procedure (i.e., a function) calls itself with parameters incrementally moving toward one of the base cases.
+
+Covered in: Recursion
+
+4) Which of the following would be an ideal scenario in which to use recursion?
+
+A) To loop through an array to find the maximum value.
+B) To search for patterns in a string and perform string manipulation.
+>>> C) To perform a search through a tree data structure.
+D) None of the above.
+
+EXPLANATION
+A search algorithm to find an item in a tree data structure would be a natural scenario in which to apply recursion. When an algorithm can be defined as a combination of sub-results starting with known cases, a recursive solution makes the most sense.
+
+Covered in: Recursion
+
+5) What are common tradeoffs between iterative and recursive solutions?
+
+A) Recursive solutions can often be more straightforward.
+B) Iterative solutions have better performance.
+C) Recursive solutions are more subject to system limitations.
+>>> D) All of the above.
+
+EXPLANATION
+Recursive solutions tend to be cleaner and more straightforward than iterative approaches. Recursion tends to perform more slow as it depends on system resources to keep track of repeated function calls in memory.
+
+Covered in: Recursion
+
+6) What is needed to implement recursion?
+
+A) A for loop within the function to continue calling itself.
+>>> B) A “base case” to terminate further function calls when a condition is met.
+C) An additional data structure to store data within the function.
+D) None of the above.
+
+EXPLANATION
+A recursive solution needs a minimum of two cases, a base and a recursive case. When none of the base cases are applicable, the recursive solution executes the recursive case. The recursive case is the one that calls the procedure again.
+
+Covered in: Algorithms: Searching
+
+
+7) Which of the following are algorithms commonly implemented using recursion?
+
+>>> A) Factorial operations.
+B) Quicksort
+C) Binary search.
+D) All of the above.
+
+EXPLANATION
+Recursion is used in many popular algorithms, especially searching and sorting algorithms. Some mathematical operations, such as the factorial operation and the Fibonacci sequence, are defined recursively and thus can be easily implemented as recursive functions.
+
+Covered in: Recursion
+
+Algorithms (Comprehensive)
+
+1) Can you perform a linear search on an unordered list?
+
+>>> A) Yes, and the efficiency stays the same.
+B) Yes, and the efficiency decreases.
+C) Yes, and the efficiency increases
+D) No, to perform a linear search the items must be sorted.
+
+EXPLANATION
+The efficiency of a linear search does not change if the items are sorted or unsorted, but it is preferable to use unsorted collections if there is no predictable way to find the item.
+
+Covered in: Algorithms: Searching
+
+
+2) Which of these is not a step in a binary search?
+
+A) Looping until the item is found or low point becomes higher than the high point.
+B) Checking if the item is less than the high value.
+C) Setting a new low, mid, and high point.
+>>> D) Checking if the item is less than the low value.
+
+EXPLANATION
+The comparison against the low value should be greater than, not less than. The item being searched for should always be between the high and low value.
+
+Covered in: Algorithms: Sorting
+
+
+3) When is a binary search more efficient than a linear search?
+
+A) In all cases
+B) When the array is not sorted
+>>> C) When the array is sorted
+D) Never
+
+EXPLANATION
+A binary search requires a sorted array, but the search is much faster than a linear search. If the array is unsorted, we cannot use binary search.
+
+Covered in: Algorithms: Searching
+
+
+4) What is the fundamental difference between Merge Sort and Quick Sort?
+
+>>> A) Quicksort uses a pivot value to partition the array, and merge sort simply splits the array in half.
+B) Quicksort builds a max heap to sort the data, and merge sort uses a pivot value to partition the array.
+C) Quicksort uses a pivot value to partition the array, and merge sort builds a max heap to sort the data.
+D) Quicksort builds a maximum heap to sort the data, and merge sort simply splits the array in half.
+
+EXPLANATION
+Quicksort’s main feature is to pick a partition value and then organize the groupings on either side of the partition, and perform this recursively on either side of the partition until it is sorted. A merge sort splits the array objectively in the middle recursively until there is only one item in each group, and then merges each group until the entire array is rebuilt.
+
+Covered in: Algorithms: Sorting
+
+
+5) Which control flow techniques (e.g., for loops, while loops) would most likely be used to implement selection sort?
+
+A) A single FOR loop to iterate through the collection and select the correct next item.
+>>> B) Nested FOR loops to iterate through the collection and select the correct next item.
+C) A single FOR loop with IF statements to select the correct next item.
+D) A WHILE loop to iterate through the collection and select the correct next item.
+
+EXPLANATION
+Selection sort requires nested for loops to perform the sort. For each place in the array, it goes through the collection to select the lowest item, so both loops are needed.
+
+Covered in: Algorithms: Sorting
+
+
+6) Which kind of sort is the most efficient?
+
+A) Bubble sort.
+>>> B) Merge sort.
+C) Insertion sort.
+D) Selection sort.
+
+EXPLANATION
+Merge sort is the only sort on the list that significantly improves upon other searches. All of the other searches require going through the collection many times to make sure it ends up sorted, and merge sort can minimize that by its divide and conquer nature.
+
+Covered in: Algorithms: Sorting
+
+
+7) Which of these is an example of an algorithm?
+
+>>> A) Pandora’s song prediction.
+B) Listening to the radio.
+C) Browsing Facebook.
+D) Texting a friend.
+
+EXPLANATION
+Only Pandora’s song prediction, which is a specific calculation based on previous songs and ratings, can be considered an algorithm, as it runs for a finite amount of time for each song. The other three options can continue for an indeterminate amount of time and thus cannot be considered an algorithm.
+
+Covered in: Algorithms: Introduction
+
+
+8) What is runtime?
+
+A) The physical time duration of an algorithm.
+B) A function that estimates the time it takes for an algorithm to run.
+>>> C) Both of these.
+D) Neither of these.
+
+EXPLANATION
+Runtime can be the physical time duration of an algorithm, or it can be a function that estimates the time it takes for an algorithm to run, also known as time complexity.
+
+Covered in: Time Complexity Basics
+
+
+9) Which of these do we consider when estimating time complexity?
+
+>>> A) The worst-case scenario.
+B) The average scenario.
+C) The best case scenario.
+D) All scenarios.
+
+EXPLANATION
+When estimating the time complexity, we take a look at how the algorithm performs as the input grows very large. Also, we must consider what happens if the item is the last in a list. For instance, in a search we assume that the item is found last and not first.
+
+Covered in: Time Complexity Basics
+
+
+10) Order the following time complexities from the most efficient to the least efficient: quadratic, exponential, linear, constant, logarithmic, and log-linear.
+
+A) Constant, logarithmic, log-linear, linear, exponential, quadratic.
+>>> B) Constant, logarithmic, linear, log-linear, quadratic, exponential.=
+C) Constant, log-linear, linear, logarithmic, quadratic, exponential.
+D) Constant, logarithmic, log-linear, linear, exponential, quadratic.
+
+EXPLANATION
+An algorithm that has constant growth always takes the same amount of time to run. The other types grow as a function of n, the input. For logarithmic, it’s log n, for linear its n, and for log-linear, it’s n log n. Quadratic is n^2, and exponential is 2^n. If you graph these functions, you will see that logarithmic time complexity grows the slowest, then linear, etc., which indicates the order of efficiency.
+
+Covered in: Time Complexity Basics
+
+
+11) Which of the options below is not a benefit of using iteration over recursion?
+
+A) Efficiency.
+B) Better use of computer resources.
+>>> C) Simplicity and ease of understanding.
+D) There is never a benefit to using recursion.
+
+EXPLANATION
+Some algorithms are very hard to visualize iteratively, but can be made much simpler by thinking about the base cases and writing them recursively. Recursive algorithms use more resources but are sometimes much easier to read.
+
+Covered in: Recursion
+
+
+12) Is a base case required to write a recursive algorithm?
+
+A) No, the base case is only suggested and not required.
+>>> B) Yes, if there is no base case, the algorithm will continue to run forever.
+C) No, the base case is only required if there is more than one exit to the algorithm.
+D) Yes, but multiple base cases must be defined.
+
+EXPLANATION
+A base case is required in order to write a recursive algorithm. It doesn’t matter how many there are, although there are usually just one or two. If there is no base case defined, the algorithm will keep calling itself over and over with no exit.
+
+Covered in: Recursion
