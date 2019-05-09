@@ -1,0 +1,13 @@
+> What is the main difference between a stack and a queue?
+
+A **Stack** deals with the most recently inserted element (the one at the end of the line) first, utilizing Last In, First Out. Think of a _stack_ of books. You would typically take the one from the top, even though it was the most recently added.
+
+A **Queue** deals with the first element (the one at the front of the line) first, utilizing First In, First Out. Think of a line (or if you are British, a _queue_) for a roller coaster. The ones at the beginning of the line are the first to allowed to ride because they have been there the longest. 
+
+> What are the similarities between stacks and queues?
+
+They are both data structures that focus on taking an ordered set and dealing with the elements in some manner in a certain order, allowing for the elements to be dealt with and marked them off of their proverbial to-do list.
+
+> Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+
+You would use a **Stack** for its Last In, First Out capabilities because you are wanting to access things in reverse order.
