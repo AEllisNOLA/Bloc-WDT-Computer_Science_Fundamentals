@@ -6,13 +6,16 @@ Given a string, reverse it using a stack. For example, the string "Bloc!" should
 reverse = word => {
   let stack = [];
   let reversedWord = [];
+
   for (let char in word) {
     stack.push(word.charAt(char));
   }
+
   while (stack.length > 0) {
     let reversedLetter = stack.pop();
     reversedWord.push(reversedLetter);
   }
+
   return reversedWord.join("");
 };
 
@@ -68,7 +71,7 @@ let line = new Queue();
 line.enqueue("A"); // A
 line.enqueue("B"); // A B
 line.enqueue("C"); // A B C
-line.dequeue(); // B C
-line.dequeue(); // C
-line.dequeue(); // empty
+line.dequeue(); // B C - A removed
+line.dequeue(); // C - B removed
+line.dequeue(); // empty - C removed
 console.log(line);

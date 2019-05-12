@@ -1,0 +1,234 @@
+> What are some pros and cons of using linked lists instead of arrays?
+
+Pro: **Linked lists** are less memory-intensive. An **array** requires _n_ memory blocks in a row to hold on to an array of _n_ length, whereas a linked list's _n_ components can be spread out across the system. Linked lists also do not utilize indexing, which saves on memory, especially during operations in which something is placed into/pulled out of the array, causing a cascade of reindexing.
+
+Con: The aforementioned lack of indexing means that a linked list cannot jump straight to a certain element. A linked list must start at the beginning and move over until it finds what it is looking for. If an element is near the end of the list, this can be very inefficient.
+
+> Come up with a real-world example of a linked list.
+
+An elevator seems like it would be a linked list. A person cannot go beyond the bottom floor (head node) or above the top floor because that would cause an out of bounds exception. Nor can a person automatically jump from the 1st floor to the 7th floor? The elevator must move up and check "Is the 2nd floor the 7th floor? Nope. Is the 3rd floor the 7th floor? Nope." until getting to "Is the 7th floor is the 7th floor? Yep!"
+
+> The linked list push function should take a value, create a node, and add it to the end of a list. Below is pseudocode for a push function for a singly linked list. However, there is something wrong with it. Submit both an explanation of the bug and a functional implementation of the method.
+
+PROVIDED PSEUDOCODE:
+```
+FUNCTION push(element)
+  CREATE node
+  SET node.value TO element
+  SET node.next TO null
+
+  IF the head node does not exist
+    THEN SET head to node
+  ELSE
+    SET current to head
+    SET current.next to node
+  END IF
+END FUNCTION
+```
+
+ANSWER: The provided code does not have a looping function that moves it along until there are no _next_ elements in the list. Also, though not strictly necessary, I added a length property to the linked list class and incremented it with each element that is pushed.
+
+```
+// Class to create new node
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+// Class to create new, empty inked List
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    let node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let current = this.head;
+      // ADDED CODE: WHILE there is a next value to jump to, jump to it
+      while (current.next) {
+        current = current.next
+      }
+      current.next = node;
+    }
+    // ADDED CODE: Increment length
+    this.length++;
+  }
+}
+
+let list = new LinkedList();
+list.push("A");
+list.push("B");
+console.log(list);
+```
+
+> Given an unsorted singly linked list, remove all duplicates from the linked list.
+
+```
+// Class to create new node
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+// Class to create new, empty inked List
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    let node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.length++;
+  }
+
+  // print helper function
+  print() {
+    if (!this.head) return;
+    let node = this.head;
+    let i = 1;
+    while (node.next != null) {
+      console.log(`${i} - ${node.value}`);
+      node = node.next;
+      i++;
+    }
+    console.log(`${i} - ${node.value}`);
+  }
+
+  removeDuplicates() {
+    if (!this.head || !this.head.next) return this;
+
+    let nodes = {};
+    let i = this.head;
+    let j = i.next;
+    nodes[i.value] = true;
+
+    while (j) {
+      let value = j.value;
+      if (nodes[value]) {
+        i.next = j.next;
+        this.length--;
+      } else {
+        nodes[value] = true;
+        i = j;
+      }
+      j = j.next;
+    }
+  }
+}
+
+let list = new LinkedList();
+list.push("a");
+list.push("c");
+list.push("d");
+list.push("d");
+list.push("a");
+
+console.log("Before removeDuplicates() called");
+list.print();
+
+list.removeDuplicates();
+console.log("After removeDuplicates() called");
+list.print();
+```
+
+> Given an unsorted singly linked list, reverse it.
+Example
+Input: a -> b -> c -> d
+Output: d -> c -> b -> a
+
+```
+/* 
+> Given an unsorted singly linked list, remove all duplicates from the linked list.
+*/
+
+// Class to create new node
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+// Class to create new, empty inked List
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.length = 0;
+  }
+
+  push(value) {
+    let node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = node;
+    }
+    this.length++;
+  }
+
+  // print helper function
+  print() {
+    if (!this.head) return;
+    let node = this.head;
+    let i = 1;
+    while (node.next != null) {
+      console.log(`${i} - ${node.value}`);
+      node = node.next;
+      i++;
+    }
+    console.log(`${i} - ${node.value}`);
+  }
+
+  reverse() {
+    if (!this.head) return null;
+    if (!this.head.next) return this;
+
+    let current = this.head;
+    let previous = null;
+    let next;
+
+    while (current) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    this.head = previous;
+  }
+}
+
+let list = new LinkedList();
+list.push("a");
+list.push("b");
+list.push("c");
+list.push("d");
+
+list.reverse();
+list.print();
+
+```

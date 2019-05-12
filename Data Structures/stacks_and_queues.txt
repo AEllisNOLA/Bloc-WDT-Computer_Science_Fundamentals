@@ -11,3 +11,7 @@ They are both data structures that focus on taking an ordered set and dealing wi
 > Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
 
 You would use a **Stack** for its Last In, First Out capabilities because you are wanting to access things in reverse order.
+
+
+
+
