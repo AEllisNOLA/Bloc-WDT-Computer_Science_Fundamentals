@@ -97,11 +97,15 @@ ON b.isbn = h.isbn
 WHERE b.title = 'Advanced Potion-Making'
 ORDER BY h.rank ASC;
 
--- List all of the library patrons. If they have one or more books checked out, list the books with the patrons.
-SELECT p.name, b.title, t.checked_out_date, t.checked_in_date
-FROM transactions AS t
-JOIN patrons as p
-ON t.id = p.id
-JOIN books AS b
-ON b.isbn = t.isbn;
+-- List all of the library patrons. If they have one or more books checked out, list the books with the patrons.git 
 
+SELECT p.name, bt.title
+FROM patrons AS p
+LEFT JOIN (
+	SELECT b.title, t.patron_id
+	FROM books AS b
+	JOIN transactions AS t
+	ON b.isbn = t.isbn
+	WHERE t.checked_in_date IS NULL
+) AS bt
+ON p.id = bt.patron_id;
