@@ -50,15 +50,15 @@ class HashTable {
             let name = this.keyMap[index][i][1];
             let address = this.keyMap[index][i][2];
             // return all info
-            return `${name} - ${address} - ${number}`;
+            return `Name: ${name} - Address: ${address} - Phone Number: ${number}`;
           }
         }
       }
-      return `${phoneNumber} not found`;
+      return `Phone number ${phoneNumber} not found`;
     }
   }
   
-  let customers = new HashTable(17);
+  let customers = new HashTable();
   customers.set("999-999-9999", "Saint", "15 Doggo Lane");
   customers.set("111-111-1111", "Kelis", "9 Meow Street");
   console.log(customers.get("999-999-9999"));
